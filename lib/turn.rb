@@ -30,22 +30,27 @@ def move(board, input, value = 'X')
    board[input] = value
 end
 
+# def turn(board)
+#   puts "Please enter 1-9:"
+#   index = gets.strip
+#   index = input_to_index(index)
+#     while valid_move?(board, index) == index 
+#     @move
+#   #while  valid_move? == false
+#   #    trun
+#   #   move
+#   # else
+#   #  turn
+#   end 
+#   until valid_move?(board, index) == index
+#   @turn
+# end
+# end
+
 def turn(board)
    puts "Please enter 1-9:"
    index = gets.strip
-   index = input_to_index(index)
-    while valid_move?(board, index) == index 
-    @move
-   #while  valid_move? == false
-   #    trun
-  #   move
-  # else
-  #  turn
-   end 
-   until valid_move?(board, index) == index
-   @turn
- end
+  index == input_to_index
+   
 end
-
-
 
