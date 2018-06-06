@@ -6,49 +6,40 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def input_to_index(input)
-  return input.to_i - 1
+def input_to_index(index)
+  return index.to_i - 1
 end
 
-#def valid_move?(board, index)
-# if index <= 8 && board[index] == " " 
-#   return true
-# else 
-#   return false
+# def position_taken?(board, index)
+#   if  board[index] == "" || board[index] == " " || board[index] == nil
+#     false
+#   elsif board[index] != "" || board[index] != " "
+#     true
+#   end
 # end
-#end
-def position_taken?(board, index)
-  if  board[index] == "" || board[index] == " " || board[index] == nil
-    false
-  elsif board[index] != "" || board[index] != " "
-    true
-  end
-end
 
 def valid_move?(board, index)
- if index <= 8 && (board[index] == " " || board[index] == "" || board[index] == nil)
-   return true
-   elsif position_taken?(board, index)
-   return false
-   #else 
-  # return true
- end
+    if index.between?(0,8) && board[index] == " "
+        true
+    else
+        false
+    end
 end
-
-#def valid_move?(board, index)
-#      if index == nil || index < 0 || index > 8
-#       false
-#     elsif position_taken?(board, index)
-#       false
-#     else
-#       true
-#     end
-# end 
 
 def move(board, input, value = 'X')
    board[input] = value
 end
 
-#def turn(board)
-#  puts "Please enter 1-9:"
-#end
+def turn(board)
+   puts "Please enter 1-9:"
+   index = gets.strip
+   index = input_to_index(index)
+  if index == valid_move?
+    move
+  else
+    turn
+  end 
+end
+
+
+
