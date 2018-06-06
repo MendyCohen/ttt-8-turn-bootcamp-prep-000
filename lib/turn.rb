@@ -42,7 +42,7 @@ def turn(board)
   # else
   #  turn
    end 
-   until valid_move? == index
+   until valid_move?(board, index) == index
    turn
  end
 end
