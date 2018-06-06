@@ -42,6 +42,9 @@ def turn(board)
   # else
   #  turn
    end 
+   until valid_move? == index
+   turn
+ end
 end
 
 
