@@ -37,7 +37,7 @@ def turn(board)
     while valid_move?(board, index) == index 
     move
    #while  valid_move? == false
-       trun
+   #    trun
   #   move
   # else
   #  turn
